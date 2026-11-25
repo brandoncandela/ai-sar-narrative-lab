@@ -1,0 +1,12 @@
+#!/bin/sh
+# Refuse a commit that adds an .env file or anything shaped like an Anthropic API key.
+# Turn on once per clone: git config core.hooksPath .githooks
+if git diff --cached --name-only | grep -E '(^|/)\.env($|\.)' | grep -v '\.env\.example$' >/dev/null; then
+  echo "pre-commit: refusing to commit an .env file" >&2
+  exit 1
+fi
+if git diff --cached -U0 | grep -E '^\+' | grep -E 'sk-ant-[A-Za-z0-9_-]{8,}' >/dev/null; then
+  echo "pre-commit: staged changes contain something that looks like an Anthropic API key" >&2
+  exit 1
+fi
+exit 0

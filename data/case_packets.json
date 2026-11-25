@@ -1,0 +1,2121 @@
+{
+ "source": "brandoncandela/aml-backlog-command-center dist/data/command_center.json and data/customer_exports",
+ "selection": "24 cases, priority P1 or P2 with 3 to 10 alerts, round robin across most severe typology, seed 20261125",
+ "eligible_cases": 566,
+ "total_cases": 1240,
+ "packets": [
+  {
+   "case_id": "CASE-0033",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "fraud referral",
+   "priority_tier": "P1",
+   "subject": {
+    "evidence_id": "KYC-00576315",
+    "cif": "00576315",
+    "name": "Sofia A Young",
+    "date_of_birth": "1988-06-03",
+    "zip_code": "33101",
+    "segment": "retail",
+    "risk_rating": "High",
+    "accounts": [
+     "account ending 1567"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0033",
+    "alert_count": 5,
+    "first_alert_date": "2026-04-05",
+    "last_alert_date": "2026-10-15",
+    "total_amount": 11595.96,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Fraud team referral",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "fraud_referral": 1,
+     "funnel_account": 1,
+     "high_risk_geography": 1,
+     "p2p_velocity": 1,
+     "rapid_movement": 1
+    },
+    "amount_by_typology": {
+     "fraud_referral": 1974.0,
+     "funnel_account": 1941.0,
+     "high_risk_geography": 6452.0,
+     "p2p_velocity": 682.95,
+     "rapid_movement": 546.01
+    },
+    "branches": [
+     "MIA02"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-263121",
+     "system": "Actimize transaction monitoring",
+     "scenario": "rapid_movement",
+     "scenario_label": "Rapid movement of funds",
+     "date": "2026-04-05",
+     "amount": 546.01,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA02"
+    },
+    {
+     "evidence_id": "LEG-01581",
+     "system": "Legacy SQL rules engine",
+     "scenario": "high_risk_geography",
+     "scenario_label": "Activity involving a high risk jurisdiction",
+     "date": "2026-04-13",
+     "amount": 6452.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Wires to high risk jurisdiction"
+    },
+    {
+     "evidence_id": "FR-4523",
+     "system": "Fraud team referral",
+     "scenario": "fraud_referral",
+     "scenario_label": "Referral from the fraud team",
+     "date": "2026-06-04",
+     "amount": 1974.0,
+     "amount_meaning": "fraud team's estimated exposure",
+     "referral_reason": "Elder exploitation",
+     "account": "account ending 1567",
+     "exposure_as_reported": "1974"
+    },
+    {
+     "evidence_id": "ACT-262710",
+     "system": "Actimize transaction monitoring",
+     "scenario": "p2p_velocity",
+     "scenario_label": "High velocity peer to peer payments",
+     "date": "2026-08-31",
+     "amount": 682.95,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA02"
+    },
+    {
+     "evidence_id": "LEG-00739",
+     "system": "Legacy SQL rules engine",
+     "scenario": "funnel_account",
+     "scenario_label": "Funnel account deposits",
+     "date": "2026-10-15",
+     "amount": 1941.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Funnel account deposits"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0197",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "fraud referral",
+   "priority_tier": "P1",
+   "subject": {
+    "evidence_id": "KYC-00392287",
+    "cif": "00392287",
+    "name": "Joseph W Sanchez",
+    "date_of_birth": "1970-10-05",
+    "zip_code": "10001",
+    "segment": "small_business",
+    "risk_rating": "Medium",
+    "accounts": [
+     "account ending 4582",
+     "account ending 9347",
+     "account ending 4171"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0197",
+    "alert_count": 4,
+    "first_alert_date": "2026-03-13",
+    "last_alert_date": "2026-09-25",
+    "total_amount": 29655.75,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Fraud team referral",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "check_kiting": 1,
+     "dormant_reactivation": 1,
+     "fraud_referral": 1,
+     "rapid_movement": 1
+    },
+    "amount_by_typology": {
+     "check_kiting": 10106.0,
+     "dormant_reactivation": 6396.72,
+     "fraud_referral": 7900.0,
+     "rapid_movement": 5253.03
+    },
+    "branches": [
+     "NYC03",
+     "ORL01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-262706",
+     "system": "Actimize transaction monitoring",
+     "scenario": "rapid_movement",
+     "scenario_label": "Rapid movement of funds",
+     "date": "2026-03-13",
+     "amount": 5253.03,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "NYC03"
+    },
+    {
+     "evidence_id": "ACT-260027",
+     "system": "Actimize transaction monitoring",
+     "scenario": "dormant_reactivation",
+     "scenario_label": "Dormant account reactivation",
+     "date": "2026-04-26",
+     "amount": 6396.72,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "ORL01"
+    },
+    {
+     "evidence_id": "FR-4631",
+     "system": "Fraud team referral",
+     "scenario": "fraud_referral",
+     "scenario_label": "Referral from the fraud team",
+     "date": "2026-06-09",
+     "amount": 7900.0,
+     "amount_meaning": "fraud team's estimated exposure, reported as $7.9k so only accurate to the nearest $100",
+     "referral_reason": "Account takeover",
+     "exposure_as_reported": "$7.9k"
+    },
+    {
+     "evidence_id": "LEG-00212",
+     "system": "Legacy SQL rules engine",
+     "scenario": "check_kiting",
+     "scenario_label": "Check kiting pattern",
+     "date": "2026-09-25",
+     "amount": 10106.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Check kiting pattern"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0210",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "round dollar wires",
+   "priority_tier": "P1",
+   "subject": {
+    "evidence_id": "KYC-00439625",
+    "cif": "00439625",
+    "name": "Lucia F Taylor",
+    "date_of_birth": "1958-01-20",
+    "zip_code": "11201",
+    "segment": "msb",
+    "risk_rating": "High",
+    "accounts": [
+     "account ending 8230",
+     "account ending 8927"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0210",
+    "alert_count": 3,
+    "first_alert_date": "2026-03-10",
+    "last_alert_date": "2026-09-03",
+    "total_amount": 15170.42,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "large_cash": 1,
+     "p2p_velocity": 1,
+     "round_dollar_wires": 1
+    },
+    "amount_by_typology": {
+     "large_cash": 1053.06,
+     "p2p_velocity": 1522.36,
+     "round_dollar_wires": 12595.0
+    },
+    "branches": [
+     "MIA01",
+     "NYC03"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-260084",
+     "system": "Actimize transaction monitoring",
+     "scenario": "large_cash",
+     "scenario_label": "Large cash transaction",
+     "date": "2026-03-10",
+     "amount": 1053.06,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "NYC03"
+    },
+    {
+     "evidence_id": "ACT-261813",
+     "system": "Actimize transaction monitoring",
+     "scenario": "p2p_velocity",
+     "scenario_label": "High velocity peer to peer payments",
+     "date": "2026-05-29",
+     "amount": 1522.36,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA01"
+    },
+    {
+     "evidence_id": "LEG-01194",
+     "system": "Legacy SQL rules engine",
+     "scenario": "round_dollar_wires",
+     "scenario_label": "Round dollar wires",
+     "date": "2026-09-03",
+     "amount": 12595.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Round dollar wires"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0264",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "check kiting",
+   "priority_tier": "P1",
+   "subject": {
+    "evidence_id": "KYC-00632272",
+    "cif": "00632272",
+    "name": "Carmen H Lopez",
+    "date_of_birth": "1988-11-17",
+    "zip_code": "32803",
+    "segment": "small_business",
+    "risk_rating": "High",
+    "accounts": [
+     "account ending 5340",
+     "account ending 1334"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0264",
+    "alert_count": 3,
+    "first_alert_date": "2026-07-21",
+    "last_alert_date": "2026-09-08",
+    "total_amount": 106583.26,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "check_kiting": 1,
+     "p2p_velocity": 1,
+     "round_dollar_wires": 1
+    },
+    "amount_by_typology": {
+     "check_kiting": 23651.0,
+     "p2p_velocity": 31565.26,
+     "round_dollar_wires": 51367.0
+    },
+    "branches": [
+     "NYC03"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-260077",
+     "system": "Actimize transaction monitoring",
+     "scenario": "p2p_velocity",
+     "scenario_label": "High velocity peer to peer payments",
+     "date": "2026-07-21",
+     "amount": 31565.26,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "NYC03"
+    },
+    {
+     "evidence_id": "LEG-01742",
+     "system": "Legacy SQL rules engine",
+     "scenario": "check_kiting",
+     "scenario_label": "Check kiting pattern",
+     "date": "2026-08-11",
+     "amount": 23651.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Check kiting pattern"
+    },
+    {
+     "evidence_id": "LEG-01251",
+     "system": "Legacy SQL rules engine",
+     "scenario": "round_dollar_wires",
+     "scenario_label": "Round dollar wires",
+     "date": "2026-09-08",
+     "amount": 51367.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Round dollar wires"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0333",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "structuring",
+   "priority_tier": "P1",
+   "subject": {
+    "evidence_id": "KYC-00522828",
+    "cif": "00522828",
+    "name": "Laura W Ramirez",
+    "date_of_birth": "1983-05-24",
+    "zip_code": "33139",
+    "segment": "private_banking",
+    "risk_rating": "Low",
+    "accounts": [
+     "account ending 8478",
+     "account ending 9397",
+     "account ending 9230"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0333",
+    "alert_count": 9,
+    "first_alert_date": "2026-03-21",
+    "last_alert_date": "2026-10-22",
+    "total_amount": 216123.51,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Fraud team referral",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "dormant_reactivation": 2,
+     "fraud_referral": 1,
+     "funnel_account": 1,
+     "high_risk_geography": 1,
+     "large_cash": 1,
+     "rapid_movement": 1,
+     "round_dollar_wires": 1,
+     "structuring": 1
+    },
+    "amount_by_typology": {
+     "dormant_reactivation": 7275.47,
+     "fraud_referral": 1500.0,
+     "funnel_account": 3486.0,
+     "high_risk_geography": 154831.82,
+     "large_cash": 10634.35,
+     "rapid_movement": 19915.94,
+     "round_dollar_wires": 9624.0,
+     "structuring": 8855.93
+    },
+    "branches": [
+     "MIA01",
+     "MIA02",
+     "NYC03",
+     "ORL01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-262614",
+     "system": "Actimize transaction monitoring",
+     "scenario": "rapid_movement",
+     "scenario_label": "Rapid movement of funds",
+     "date": "2026-03-21",
+     "amount": 19915.94,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA02"
+    },
+    {
+     "evidence_id": "ACT-260561",
+     "system": "Actimize transaction monitoring",
+     "scenario": "dormant_reactivation",
+     "scenario_label": "Dormant account reactivation",
+     "date": "2026-04-26",
+     "amount": 1860.51,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "ORL01"
+    },
+    {
+     "evidence_id": "ACT-260102",
+     "system": "Actimize transaction monitoring",
+     "scenario": "structuring",
+     "scenario_label": "Cash structuring",
+     "date": "2026-06-04",
+     "amount": 8855.93,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "NYC03"
+    },
+    {
+     "evidence_id": "ACT-262422",
+     "system": "Actimize transaction monitoring",
+     "scenario": "large_cash",
+     "scenario_label": "Large cash transaction",
+     "date": "2026-06-15",
+     "amount": 10634.35,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA02"
+    },
+    {
+     "evidence_id": "LEG-01664",
+     "system": "Legacy SQL rules engine",
+     "scenario": "round_dollar_wires",
+     "scenario_label": "Round dollar wires",
+     "date": "2026-08-10",
+     "amount": 9624.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Round dollar wires"
+    },
+    {
+     "evidence_id": "ACT-261701",
+     "system": "Actimize transaction monitoring",
+     "scenario": "high_risk_geography",
+     "scenario_label": "Activity involving a high risk jurisdiction",
+     "date": "2026-08-12",
+     "amount": 154831.82,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "ORL01"
+    },
+    {
+     "evidence_id": "ACT-263181",
+     "system": "Actimize transaction monitoring",
+     "scenario": "dormant_reactivation",
+     "scenario_label": "Dormant account reactivation",
+     "date": "2026-09-06",
+     "amount": 5414.96,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA01"
+    },
+    {
+     "evidence_id": "FR-4673",
+     "system": "Fraud team referral",
+     "scenario": "fraud_referral",
+     "scenario_label": "Referral from the fraud team",
+     "date": "2026-09-09",
+     "amount": 1500.0,
+     "amount_meaning": "fraud team's estimated exposure, reported as $1.5k so only accurate to the nearest $100",
+     "referral_reason": "Mule activity",
+     "account": "account ending 8478",
+     "exposure_as_reported": "$1.5k"
+    },
+    {
+     "evidence_id": "LEG-01158",
+     "system": "Legacy SQL rules engine",
+     "scenario": "funnel_account",
+     "scenario_label": "Funnel account deposits",
+     "date": "2026-10-22",
+     "amount": 3486.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Funnel account deposits"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0397",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "high risk geography",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00341445",
+    "cif": "00341445",
+    "name": "Andrew K Diaz",
+    "date_of_birth": "1962-05-05",
+    "zip_code": "33156",
+    "segment": "small_business",
+    "risk_rating": "Medium",
+    "accounts": [
+     "account ending 4788"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0397",
+    "alert_count": 3,
+    "first_alert_date": "2026-03-17",
+    "last_alert_date": "2026-10-02",
+    "total_amount": 22263.32,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "high_risk_geography": 1,
+     "large_cash": 1,
+     "round_dollar_wires": 1
+    },
+    "amount_by_typology": {
+     "high_risk_geography": 3311.0,
+     "large_cash": 16485.32,
+     "round_dollar_wires": 2467.0
+    },
+    "branches": [
+     "MIA01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "LEG-01722",
+     "system": "Legacy SQL rules engine",
+     "scenario": "high_risk_geography",
+     "scenario_label": "Activity involving a high risk jurisdiction",
+     "date": "2026-03-17",
+     "amount": 3311.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Wires to high risk jurisdiction"
+    },
+    {
+     "evidence_id": "LEG-00989",
+     "system": "Legacy SQL rules engine",
+     "scenario": "round_dollar_wires",
+     "scenario_label": "Round dollar wires",
+     "date": "2026-05-25",
+     "amount": 2467.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Round dollar wires"
+    },
+    {
+     "evidence_id": "ACT-261095",
+     "system": "Actimize transaction monitoring",
+     "scenario": "large_cash",
+     "scenario_label": "Large cash transaction",
+     "date": "2026-10-02",
+     "amount": 16485.32,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA01"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0431",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "check kiting",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00638899",
+    "cif": "00638899",
+    "name": "Steven A Ortiz",
+    "date_of_birth": "1962-07-19",
+    "zip_code": "11201",
+    "segment": "retail",
+    "risk_rating": "Medium",
+    "accounts": [
+     "account ending 4948",
+     "account ending 0131",
+     "account ending 3179"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0431",
+    "alert_count": 4,
+    "first_alert_date": "2026-05-02",
+    "last_alert_date": "2026-05-27",
+    "total_amount": 29849.62,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "check_kiting": 1,
+     "dormant_reactivation": 2,
+     "round_dollar_wires": 1
+    },
+    "amount_by_typology": {
+     "check_kiting": 11981.0,
+     "dormant_reactivation": 11969.62,
+     "round_dollar_wires": 5899.0
+    },
+    "branches": [
+     "ORL01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "LEG-00583",
+     "system": "Legacy SQL rules engine",
+     "scenario": "check_kiting",
+     "scenario_label": "Check kiting pattern",
+     "date": "2026-05-02",
+     "amount": 11981.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Check kiting pattern"
+    },
+    {
+     "evidence_id": "ACT-261139",
+     "system": "Actimize transaction monitoring",
+     "scenario": "dormant_reactivation",
+     "scenario_label": "Dormant account reactivation",
+     "date": "2026-05-15",
+     "amount": 2200.89,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "ORL01"
+    },
+    {
+     "evidence_id": "ACT-260617",
+     "system": "Actimize transaction monitoring",
+     "scenario": "dormant_reactivation",
+     "scenario_label": "Dormant account reactivation",
+     "date": "2026-05-25",
+     "amount": 9768.73,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "ORL01"
+    },
+    {
+     "evidence_id": "LEG-00854",
+     "system": "Legacy SQL rules engine",
+     "scenario": "round_dollar_wires",
+     "scenario_label": "Round dollar wires",
+     "date": "2026-05-27",
+     "amount": 5899.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Round dollar wires"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0493",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "funnel account",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00015525",
+    "cif": "00015525",
+    "name": "Paula P Lee",
+    "date_of_birth": "1980-10-11",
+    "zip_code": "33131",
+    "segment": "retail",
+    "risk_rating": "Medium",
+    "accounts": [
+     "account ending 9580",
+     "account ending 2593",
+     "account ending 9390"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0493",
+    "alert_count": 3,
+    "first_alert_date": "2026-06-18",
+    "last_alert_date": "2026-10-24",
+    "total_amount": 33841.59,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "check_kiting": 1,
+     "dormant_reactivation": 1,
+     "funnel_account": 1
+    },
+    "amount_by_typology": {
+     "check_kiting": 5318.0,
+     "dormant_reactivation": 8886.59,
+     "funnel_account": 19637.0
+    },
+    "branches": [
+     "ORL01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "LEG-01681",
+     "system": "Legacy SQL rules engine",
+     "scenario": "funnel_account",
+     "scenario_label": "Funnel account deposits",
+     "date": "2026-06-18",
+     "amount": 19637.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Funnel account deposits"
+    },
+    {
+     "evidence_id": "LEG-00159",
+     "system": "Legacy SQL rules engine",
+     "scenario": "check_kiting",
+     "scenario_label": "Check kiting pattern",
+     "date": "2026-06-29",
+     "amount": 5318.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Check kiting pattern"
+    },
+    {
+     "evidence_id": "ACT-260920",
+     "system": "Actimize transaction monitoring",
+     "scenario": "dormant_reactivation",
+     "scenario_label": "Dormant account reactivation",
+     "date": "2026-10-24",
+     "amount": 8886.59,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "ORL01"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0497",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "funnel account",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00246905",
+    "cif": "00246905",
+    "name": "Victor L Flores",
+    "date_of_birth": "1963-05-17",
+    "zip_code": "33101",
+    "segment": "retail",
+    "risk_rating": "Low",
+    "accounts": [
+     "account ending 3823",
+     "account ending 7869"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0497",
+    "alert_count": 6,
+    "first_alert_date": "2026-03-08",
+    "last_alert_date": "2026-06-27",
+    "total_amount": 41383.87,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "dormant_reactivation": 1,
+     "funnel_account": 1,
+     "high_risk_geography": 1,
+     "large_cash": 2,
+     "rapid_movement": 1
+    },
+    "amount_by_typology": {
+     "dormant_reactivation": 5790.83,
+     "funnel_account": 7215.0,
+     "high_risk_geography": 3086.8,
+     "large_cash": 18507.61,
+     "rapid_movement": 6783.63
+    },
+    "branches": [
+     "MIA02",
+     "NYC03",
+     "ORL01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-262653",
+     "system": "Actimize transaction monitoring",
+     "scenario": "large_cash",
+     "scenario_label": "Large cash transaction",
+     "date": "2026-03-08",
+     "amount": 14947.99,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "ORL01"
+    },
+    {
+     "evidence_id": "ACT-262633",
+     "system": "Actimize transaction monitoring",
+     "scenario": "dormant_reactivation",
+     "scenario_label": "Dormant account reactivation",
+     "date": "2026-03-25",
+     "amount": 5790.83,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "NYC03"
+    },
+    {
+     "evidence_id": "ACT-261669",
+     "system": "Actimize transaction monitoring",
+     "scenario": "rapid_movement",
+     "scenario_label": "Rapid movement of funds",
+     "date": "2026-04-06",
+     "amount": 6783.63,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA02"
+    },
+    {
+     "evidence_id": "ACT-260854",
+     "system": "Actimize transaction monitoring",
+     "scenario": "large_cash",
+     "scenario_label": "Large cash transaction",
+     "date": "2026-04-12",
+     "amount": 3559.62,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "ORL01"
+    },
+    {
+     "evidence_id": "LEG-00106",
+     "system": "Legacy SQL rules engine",
+     "scenario": "funnel_account",
+     "scenario_label": "Funnel account deposits",
+     "date": "2026-06-08",
+     "amount": 7215.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Funnel account deposits"
+    },
+    {
+     "evidence_id": "ACT-261499",
+     "system": "Actimize transaction monitoring",
+     "scenario": "high_risk_geography",
+     "scenario_label": "Activity involving a high risk jurisdiction",
+     "date": "2026-06-27",
+     "amount": 3086.8,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA02"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0503",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "check kiting",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00217878",
+    "cif": "00217878",
+    "name": "Raymond C Moore",
+    "date_of_birth": "1960-01-05",
+    "zip_code": "10023",
+    "segment": "small_business",
+    "risk_rating": "Medium",
+    "accounts": [
+     "account ending 5052"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0503",
+    "alert_count": 3,
+    "first_alert_date": "2026-03-20",
+    "last_alert_date": "2026-07-14",
+    "total_amount": 21416.58,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "check_kiting": 1,
+     "dormant_reactivation": 1,
+     "p2p_velocity": 1
+    },
+    "amount_by_typology": {
+     "check_kiting": 2831.0,
+     "dormant_reactivation": 3516.49,
+     "p2p_velocity": 15069.09
+    },
+    "branches": [
+     "MIA02"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-262574",
+     "system": "Actimize transaction monitoring",
+     "scenario": "p2p_velocity",
+     "scenario_label": "High velocity peer to peer payments",
+     "date": "2026-03-20",
+     "amount": 15069.09,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA02"
+    },
+    {
+     "evidence_id": "ACT-263092",
+     "system": "Actimize transaction monitoring",
+     "scenario": "dormant_reactivation",
+     "scenario_label": "Dormant account reactivation",
+     "date": "2026-06-26",
+     "amount": 3516.49,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA02"
+    },
+    {
+     "evidence_id": "LEG-01568",
+     "system": "Legacy SQL rules engine",
+     "scenario": "check_kiting",
+     "scenario_label": "Check kiting pattern",
+     "date": "2026-07-14",
+     "amount": 2831.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Check kiting pattern"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0504",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "high risk geography",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00584818",
+    "cif": "00584818",
+    "name": "Ana A Hernandez",
+    "date_of_birth": "1981-04-20",
+    "zip_code": "10023",
+    "segment": "private_banking",
+    "risk_rating": "Low",
+    "accounts": [
+     "account ending 9365"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0504",
+    "alert_count": 6,
+    "first_alert_date": "2026-03-28",
+    "last_alert_date": "2026-09-28",
+    "total_amount": 36207.37,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "check_kiting": 2,
+     "dormant_reactivation": 1,
+     "high_risk_geography": 1,
+     "rapid_movement": 1,
+     "round_dollar_wires": 1
+    },
+    "amount_by_typology": {
+     "check_kiting": 10268.0,
+     "dormant_reactivation": 3230.44,
+     "high_risk_geography": 2975.3,
+     "rapid_movement": 9217.63,
+     "round_dollar_wires": 10516.0
+    },
+    "branches": [
+     "MIA01",
+     "MIA02"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-261839",
+     "system": "Actimize transaction monitoring",
+     "scenario": "rapid_movement",
+     "scenario_label": "Rapid movement of funds",
+     "date": "2026-03-28",
+     "amount": 9217.63,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA01"
+    },
+    {
+     "evidence_id": "LEG-00445",
+     "system": "Legacy SQL rules engine",
+     "scenario": "check_kiting",
+     "scenario_label": "Check kiting pattern",
+     "date": "2026-04-02",
+     "amount": 6142.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Check kiting pattern"
+    },
+    {
+     "evidence_id": "LEG-00358",
+     "system": "Legacy SQL rules engine",
+     "scenario": "check_kiting",
+     "scenario_label": "Check kiting pattern",
+     "date": "2026-06-27",
+     "amount": 4126.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Check kiting pattern"
+    },
+    {
+     "evidence_id": "ACT-261088",
+     "system": "Actimize transaction monitoring",
+     "scenario": "high_risk_geography",
+     "scenario_label": "Activity involving a high risk jurisdiction",
+     "date": "2026-07-12",
+     "amount": 2975.3,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA02"
+    },
+    {
+     "evidence_id": "LEG-00542",
+     "system": "Legacy SQL rules engine",
+     "scenario": "round_dollar_wires",
+     "scenario_label": "Round dollar wires",
+     "date": "2026-09-21",
+     "amount": 10516.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Round dollar wires"
+    },
+    {
+     "evidence_id": "ACT-261403",
+     "system": "Actimize transaction monitoring",
+     "scenario": "dormant_reactivation",
+     "scenario_label": "Dormant account reactivation",
+     "date": "2026-09-28",
+     "amount": 3230.44,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA01"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0535",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "fraud referral",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00815685",
+    "cif": "00815685",
+    "name": "Monica D Jones",
+    "date_of_birth": "1983-07-23",
+    "zip_code": "33156",
+    "segment": "small_business",
+    "risk_rating": "Low",
+    "accounts": [
+     "account ending 5892",
+     "account ending 6596",
+     "account ending 4822"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0535",
+    "alert_count": 4,
+    "first_alert_date": "2026-04-30",
+    "last_alert_date": "2026-05-19",
+    "total_amount": 41554.48,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Fraud team referral",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "check_kiting": 1,
+     "fraud_referral": 1,
+     "high_risk_geography": 2
+    },
+    "amount_by_typology": {
+     "check_kiting": 7764.0,
+     "fraud_referral": 4042.0,
+     "high_risk_geography": 29748.48
+    },
+    "branches": [
+     "NYC03"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-260283",
+     "system": "Actimize transaction monitoring",
+     "scenario": "high_risk_geography",
+     "scenario_label": "Activity involving a high risk jurisdiction",
+     "date": "2026-04-30",
+     "amount": 10612.48,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "NYC03"
+    },
+    {
+     "evidence_id": "LEG-00625",
+     "system": "Legacy SQL rules engine",
+     "scenario": "high_risk_geography",
+     "scenario_label": "Activity involving a high risk jurisdiction",
+     "date": "2026-05-10",
+     "amount": 19136.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Wires to high risk jurisdiction"
+    },
+    {
+     "evidence_id": "FR-4774",
+     "system": "Fraud team referral",
+     "scenario": "fraud_referral",
+     "scenario_label": "Referral from the fraud team",
+     "date": "2026-05-11",
+     "amount": 4042.0,
+     "amount_meaning": "fraud team's estimated exposure",
+     "referral_reason": "Elder exploitation",
+     "account": "account ending 4822",
+     "exposure_as_reported": "4042"
+    },
+    {
+     "evidence_id": "LEG-01429",
+     "system": "Legacy SQL rules engine",
+     "scenario": "check_kiting",
+     "scenario_label": "Check kiting pattern",
+     "date": "2026-05-19",
+     "amount": 7764.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Check kiting pattern"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0614",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "structuring",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00235924",
+    "cif": "00235924",
+    "name": "Luis M Gomez",
+    "date_of_birth": "1949-10-06",
+    "zip_code": "07302",
+    "segment": "retail",
+    "risk_rating": "Low",
+    "accounts": [
+     "account ending 2535"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0614",
+    "alert_count": 3,
+    "first_alert_date": "2026-03-31",
+    "last_alert_date": "2026-07-10",
+    "total_amount": 19759.13,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Fraud team referral",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "dormant_reactivation": 1,
+     "fraud_referral": 1,
+     "structuring": 1
+    },
+    "amount_by_typology": {
+     "dormant_reactivation": 4271.13,
+     "fraud_referral": 4984.0,
+     "structuring": 10504.0
+    },
+    "branches": [
+     "ORL01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "LEG-00221",
+     "system": "Legacy SQL rules engine",
+     "scenario": "structuring",
+     "scenario_label": "Cash structuring",
+     "date": "2026-03-31",
+     "amount": 10504.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Cash deposits over 10k in 3 days"
+    },
+    {
+     "evidence_id": "ACT-260857",
+     "system": "Actimize transaction monitoring",
+     "scenario": "dormant_reactivation",
+     "scenario_label": "Dormant account reactivation",
+     "date": "2026-05-23",
+     "amount": 4271.13,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "ORL01"
+    },
+    {
+     "evidence_id": "FR-4621",
+     "system": "Fraud team referral",
+     "scenario": "fraud_referral",
+     "scenario_label": "Referral from the fraud team",
+     "date": "2026-07-10",
+     "amount": 4984.0,
+     "amount_meaning": "fraud team's estimated exposure",
+     "referral_reason": "Elder exploitation",
+     "account": "account ending 2535",
+     "exposure_as_reported": "4984"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0638",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "funnel account",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00458642",
+    "cif": "00458642",
+    "name": "Elena M Wilson",
+    "date_of_birth": "1996-09-20",
+    "zip_code": "11201",
+    "segment": "retail",
+    "risk_rating": "Low",
+    "accounts": [
+     "account ending 8139",
+     "account ending 5622",
+     "account ending 7174"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0638",
+    "alert_count": 4,
+    "first_alert_date": "2026-03-27",
+    "last_alert_date": "2026-09-13",
+    "total_amount": 61318.14,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "funnel_account": 1,
+     "high_risk_geography": 1,
+     "large_cash": 1,
+     "round_dollar_wires": 1
+    },
+    "amount_by_typology": {
+     "funnel_account": 20858.0,
+     "high_risk_geography": 11427.93,
+     "large_cash": 3492.21,
+     "round_dollar_wires": 25540.0
+    },
+    "branches": [
+     "MIA01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "LEG-00751",
+     "system": "Legacy SQL rules engine",
+     "scenario": "funnel_account",
+     "scenario_label": "Funnel account deposits",
+     "date": "2026-03-27",
+     "amount": 20858.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Funnel account deposits"
+    },
+    {
+     "evidence_id": "ACT-260301",
+     "system": "Actimize transaction monitoring",
+     "scenario": "high_risk_geography",
+     "scenario_label": "Activity involving a high risk jurisdiction",
+     "date": "2026-05-27",
+     "amount": 11427.93,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA01"
+    },
+    {
+     "evidence_id": "ACT-262496",
+     "system": "Actimize transaction monitoring",
+     "scenario": "large_cash",
+     "scenario_label": "Large cash transaction",
+     "date": "2026-08-01",
+     "amount": 3492.21,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA01"
+    },
+    {
+     "evidence_id": "LEG-00411",
+     "system": "Legacy SQL rules engine",
+     "scenario": "round_dollar_wires",
+     "scenario_label": "Round dollar wires",
+     "date": "2026-09-13",
+     "amount": 25540.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Round dollar wires"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0686",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "rapid movement",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00156921",
+    "cif": "00156921",
+    "name": "Daniel W Sanchez",
+    "date_of_birth": "1963-06-14",
+    "zip_code": "33156",
+    "segment": "small_business",
+    "risk_rating": "Low",
+    "accounts": [
+     "account ending 4047",
+     "account ending 5923",
+     "account ending 7856"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0686",
+    "alert_count": 4,
+    "first_alert_date": "2026-04-03",
+    "last_alert_date": "2026-08-10",
+    "total_amount": 42135.68,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "large_cash": 2,
+     "rapid_movement": 1,
+     "round_dollar_wires": 1
+    },
+    "amount_by_typology": {
+     "large_cash": 30579.07,
+     "rapid_movement": 2281.61,
+     "round_dollar_wires": 9275.0
+    },
+    "branches": [
+     "MIA02",
+     "ORL01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-262745",
+     "system": "Actimize transaction monitoring",
+     "scenario": "large_cash",
+     "scenario_label": "Large cash transaction",
+     "date": "2026-04-03",
+     "amount": 25429.34,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "ORL01"
+    },
+    {
+     "evidence_id": "ACT-263222",
+     "system": "Actimize transaction monitoring",
+     "scenario": "large_cash",
+     "scenario_label": "Large cash transaction",
+     "date": "2026-04-24",
+     "amount": 5149.73,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA02"
+    },
+    {
+     "evidence_id": "ACT-260226",
+     "system": "Actimize transaction monitoring",
+     "scenario": "rapid_movement",
+     "scenario_label": "Rapid movement of funds",
+     "date": "2026-08-05",
+     "amount": 2281.61,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA02"
+    },
+    {
+     "evidence_id": "LEG-01516",
+     "system": "Legacy SQL rules engine",
+     "scenario": "round_dollar_wires",
+     "scenario_label": "Round dollar wires",
+     "date": "2026-08-10",
+     "amount": 9275.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Round dollar wires"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0709",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "rapid movement",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00736828",
+    "cif": "00736828",
+    "name": "Eric L Miller",
+    "date_of_birth": "1957-07-27",
+    "zip_code": "33101",
+    "segment": "retail",
+    "risk_rating": "Low",
+    "accounts": [
+     "account ending 7184",
+     "account ending 3399"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0709",
+    "alert_count": 4,
+    "first_alert_date": "2026-03-17",
+    "last_alert_date": "2026-09-27",
+    "total_amount": 28779.0,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "check_kiting": 1,
+     "rapid_movement": 1,
+     "round_dollar_wires": 2
+    },
+    "amount_by_typology": {
+     "check_kiting": 15469.0,
+     "rapid_movement": 2636.0,
+     "round_dollar_wires": 10674.0
+    },
+    "branches": [
+     "NYC03"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "LEG-00877",
+     "system": "Legacy SQL rules engine",
+     "scenario": "round_dollar_wires",
+     "scenario_label": "Round dollar wires",
+     "date": "2026-03-17",
+     "amount": 5993.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Round dollar wires"
+    },
+    {
+     "evidence_id": "LEG-00304",
+     "system": "Legacy SQL rules engine",
+     "scenario": "check_kiting",
+     "scenario_label": "Check kiting pattern",
+     "date": "2026-06-19",
+     "amount": 15469.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Check kiting pattern"
+    },
+    {
+     "evidence_id": "LEG-01201",
+     "system": "Legacy SQL rules engine",
+     "scenario": "round_dollar_wires",
+     "scenario_label": "Round dollar wires",
+     "date": "2026-09-01",
+     "amount": 4681.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Round dollar wires"
+    },
+    {
+     "evidence_id": "ACT-260703",
+     "system": "Actimize transaction monitoring",
+     "scenario": "rapid_movement",
+     "scenario_label": "Rapid movement of funds",
+     "date": "2026-09-27",
+     "amount": 2636.0,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "NYC03"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0715",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "high risk geography",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00907903",
+    "cif": "00907903",
+    "name": "Mark S Williams",
+    "date_of_birth": "2001-11-05",
+    "zip_code": "33139",
+    "segment": "retail",
+    "risk_rating": "Low",
+    "accounts": [
+     "account ending 0516"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0715",
+    "alert_count": 3,
+    "first_alert_date": "2026-04-03",
+    "last_alert_date": "2026-10-20",
+    "total_amount": 39338.36,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "dormant_reactivation": 1,
+     "high_risk_geography": 1,
+     "large_cash": 1
+    },
+    "amount_by_typology": {
+     "dormant_reactivation": 12701.02,
+     "high_risk_geography": 9055.0,
+     "large_cash": 17582.34
+    },
+    "branches": [
+     "MIA02",
+     "ORL01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-262926",
+     "system": "Actimize transaction monitoring",
+     "scenario": "dormant_reactivation",
+     "scenario_label": "Dormant account reactivation",
+     "date": "2026-04-03",
+     "amount": 12701.02,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA02"
+    },
+    {
+     "evidence_id": "LEG-00724",
+     "system": "Legacy SQL rules engine",
+     "scenario": "high_risk_geography",
+     "scenario_label": "Activity involving a high risk jurisdiction",
+     "date": "2026-09-08",
+     "amount": 9055.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Wires to high risk jurisdiction"
+    },
+    {
+     "evidence_id": "ACT-260282",
+     "system": "Actimize transaction monitoring",
+     "scenario": "large_cash",
+     "scenario_label": "Large cash transaction",
+     "date": "2026-10-20",
+     "amount": 17582.34,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "ORL01"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0747",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "rapid movement",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00681423",
+    "cif": "00681423",
+    "name": "Patricia J Miller",
+    "date_of_birth": "1959-11-03",
+    "zip_code": "10016",
+    "segment": "small_business",
+    "risk_rating": "Low",
+    "accounts": [
+     "account ending 8364",
+     "account ending 3988"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0747",
+    "alert_count": 3,
+    "first_alert_date": "2026-03-31",
+    "last_alert_date": "2026-05-20",
+    "total_amount": 61164.39,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "check_kiting": 1,
+     "dormant_reactivation": 1,
+     "rapid_movement": 1
+    },
+    "amount_by_typology": {
+     "check_kiting": 21061.0,
+     "dormant_reactivation": 31243.86,
+     "rapid_movement": 8859.53
+    },
+    "branches": [
+     "NYC03",
+     "ORL01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-260611",
+     "system": "Actimize transaction monitoring",
+     "scenario": "rapid_movement",
+     "scenario_label": "Rapid movement of funds",
+     "date": "2026-03-31",
+     "amount": 8859.53,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "NYC03"
+    },
+    {
+     "evidence_id": "LEG-00815",
+     "system": "Legacy SQL rules engine",
+     "scenario": "check_kiting",
+     "scenario_label": "Check kiting pattern",
+     "date": "2026-05-16",
+     "amount": 21061.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Check kiting pattern"
+    },
+    {
+     "evidence_id": "ACT-263230",
+     "system": "Actimize transaction monitoring",
+     "scenario": "dormant_reactivation",
+     "scenario_label": "Dormant account reactivation",
+     "date": "2026-05-20",
+     "amount": 31243.86,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "ORL01"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0750",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "large cash",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00903649",
+    "cif": "00903649",
+    "name": "David W Jones",
+    "date_of_birth": "1999-04-05",
+    "zip_code": "11201",
+    "segment": "retail",
+    "risk_rating": "Medium",
+    "accounts": [
+     "account ending 3269"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0750",
+    "alert_count": 4,
+    "first_alert_date": "2026-04-05",
+    "last_alert_date": "2026-07-13",
+    "total_amount": 48906.43,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring"
+    ],
+    "alerts_by_typology": {
+     "large_cash": 4
+    },
+    "amount_by_typology": {
+     "large_cash": 48906.43
+    },
+    "branches": [
+     "MIA01",
+     "MIA02",
+     "ORL01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-262171",
+     "system": "Actimize transaction monitoring",
+     "scenario": "large_cash",
+     "scenario_label": "Large cash transaction",
+     "date": "2026-04-05",
+     "amount": 11994.06,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA01"
+    },
+    {
+     "evidence_id": "ACT-262261",
+     "system": "Actimize transaction monitoring",
+     "scenario": "large_cash",
+     "scenario_label": "Large cash transaction",
+     "date": "2026-05-12",
+     "amount": 26361.71,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "ORL01"
+    },
+    {
+     "evidence_id": "ACT-262312",
+     "system": "Actimize transaction monitoring",
+     "scenario": "large_cash",
+     "scenario_label": "Large cash transaction",
+     "date": "2026-07-10",
+     "amount": 7155.84,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA02"
+    },
+    {
+     "evidence_id": "ACT-260094",
+     "system": "Actimize transaction monitoring",
+     "scenario": "large_cash",
+     "scenario_label": "Large cash transaction",
+     "date": "2026-07-13",
+     "amount": 3394.82,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA01"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0777",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "check kiting",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00432675",
+    "cif": "00432675",
+    "name": "Anthony A Sanchez",
+    "date_of_birth": "1982-05-01",
+    "zip_code": "33156",
+    "segment": "retail",
+    "risk_rating": "Low",
+    "accounts": [
+     "account ending 3533"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0777",
+    "alert_count": 3,
+    "first_alert_date": "2026-04-08",
+    "last_alert_date": "2026-05-04",
+    "total_amount": 83457.78,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "check_kiting": 1,
+     "p2p_velocity": 1,
+     "round_dollar_wires": 1
+    },
+    "amount_by_typology": {
+     "check_kiting": 9692.0,
+     "p2p_velocity": 4648.78,
+     "round_dollar_wires": 69117.0
+    },
+    "branches": [
+     "MIA02"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "LEG-01162",
+     "system": "Legacy SQL rules engine",
+     "scenario": "check_kiting",
+     "scenario_label": "Check kiting pattern",
+     "date": "2026-04-08",
+     "amount": 9692.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Check kiting pattern"
+    },
+    {
+     "evidence_id": "ACT-260788",
+     "system": "Actimize transaction monitoring",
+     "scenario": "p2p_velocity",
+     "scenario_label": "High velocity peer to peer payments",
+     "date": "2026-04-18",
+     "amount": 4648.78,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA02"
+    },
+    {
+     "evidence_id": "LEG-01274",
+     "system": "Legacy SQL rules engine",
+     "scenario": "round_dollar_wires",
+     "scenario_label": "Round dollar wires",
+     "date": "2026-05-04",
+     "amount": 69117.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Round dollar wires"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0805",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "round dollar wires",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00297855",
+    "cif": "00297855",
+    "name": "Paula A Ortiz",
+    "date_of_birth": "1988-07-20",
+    "zip_code": "33131",
+    "segment": "retail",
+    "risk_rating": "Low",
+    "accounts": [
+     "account ending 9284"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0805",
+    "alert_count": 4,
+    "first_alert_date": "2026-04-27",
+    "last_alert_date": "2026-09-30",
+    "total_amount": 65692.52,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "large_cash": 1,
+     "p2p_velocity": 2,
+     "round_dollar_wires": 1
+    },
+    "amount_by_typology": {
+     "large_cash": 26171.63,
+     "p2p_velocity": 22019.89,
+     "round_dollar_wires": 17501.0
+    },
+    "branches": [
+     "MIA02",
+     "NYC03",
+     "ORL01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-262726",
+     "system": "Actimize transaction monitoring",
+     "scenario": "p2p_velocity",
+     "scenario_label": "High velocity peer to peer payments",
+     "date": "2026-04-27",
+     "amount": 16423.86,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "NYC03"
+    },
+    {
+     "evidence_id": "LEG-00634",
+     "system": "Legacy SQL rules engine",
+     "scenario": "round_dollar_wires",
+     "scenario_label": "Round dollar wires",
+     "date": "2026-07-27",
+     "amount": 17501.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Round dollar wires"
+    },
+    {
+     "evidence_id": "ACT-261740",
+     "system": "Actimize transaction monitoring",
+     "scenario": "large_cash",
+     "scenario_label": "Large cash transaction",
+     "date": "2026-08-31",
+     "amount": 26171.63,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA02"
+    },
+    {
+     "evidence_id": "ACT-262736",
+     "system": "Actimize transaction monitoring",
+     "scenario": "p2p_velocity",
+     "scenario_label": "High velocity peer to peer payments",
+     "date": "2026-09-30",
+     "amount": 5596.03,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "ORL01"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0808",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "p2p velocity",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00794651",
+    "cif": "00794651",
+    "name": "Anthony F Perez",
+    "date_of_birth": "1991-04-25",
+    "zip_code": "32801",
+    "segment": "retail",
+    "risk_rating": "Medium",
+    "accounts": [
+     "account ending 7206",
+     "account ending 6136",
+     "account ending 1422"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0808",
+    "alert_count": 3,
+    "first_alert_date": "2026-05-21",
+    "last_alert_date": "2026-06-04",
+    "total_amount": 24177.46,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring"
+    ],
+    "alerts_by_typology": {
+     "dormant_reactivation": 1,
+     "p2p_velocity": 2
+    },
+    "amount_by_typology": {
+     "dormant_reactivation": 2880.03,
+     "p2p_velocity": 21297.43
+    },
+    "branches": [
+     "MIA01",
+     "NYC03",
+     "ORL01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-261466",
+     "system": "Actimize transaction monitoring",
+     "scenario": "p2p_velocity",
+     "scenario_label": "High velocity peer to peer payments",
+     "date": "2026-05-21",
+     "amount": 16958.6,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "NYC03"
+    },
+    {
+     "evidence_id": "ACT-260355",
+     "system": "Actimize transaction monitoring",
+     "scenario": "dormant_reactivation",
+     "scenario_label": "Dormant account reactivation",
+     "date": "2026-05-31",
+     "amount": 2880.03,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA01"
+    },
+    {
+     "evidence_id": "ACT-261587",
+     "system": "Actimize transaction monitoring",
+     "scenario": "p2p_velocity",
+     "scenario_label": "High velocity peer to peer payments",
+     "date": "2026-06-04",
+     "amount": 4338.83,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "ORL01"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0812",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "structuring",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00155657",
+    "cif": "00155657",
+    "name": "Elena T Williams",
+    "date_of_birth": "1997-02-28",
+    "zip_code": "10016",
+    "segment": "retail",
+    "risk_rating": "Low",
+    "accounts": [
+     "account ending 7217",
+     "account ending 2333"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0812",
+    "alert_count": 3,
+    "first_alert_date": "2026-08-02",
+    "last_alert_date": "2026-10-09",
+    "total_amount": 86821.68,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "check_kiting": 1,
+     "high_risk_geography": 1,
+     "structuring": 1
+    },
+    "amount_by_typology": {
+     "check_kiting": 12419.0,
+     "high_risk_geography": 52096.0,
+     "structuring": 22306.68
+    },
+    "branches": [
+     "MIA01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "ACT-260506",
+     "system": "Actimize transaction monitoring",
+     "scenario": "structuring",
+     "scenario_label": "Cash structuring",
+     "date": "2026-08-02",
+     "amount": 22306.68,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA01"
+    },
+    {
+     "evidence_id": "LEG-00074",
+     "system": "Legacy SQL rules engine",
+     "scenario": "high_risk_geography",
+     "scenario_label": "Activity involving a high risk jurisdiction",
+     "date": "2026-10-07",
+     "amount": 52096.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Wires to high risk jurisdiction"
+    },
+    {
+     "evidence_id": "LEG-00978",
+     "system": "Legacy SQL rules engine",
+     "scenario": "check_kiting",
+     "scenario_label": "Check kiting pattern",
+     "date": "2026-10-09",
+     "amount": 12419.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Check kiting pattern"
+    }
+   ]
+  },
+  {
+   "case_id": "CASE-0871",
+   "bank": "Candela Bank (fictional)",
+   "as_of": "2026-11-17",
+   "primary_typology": "round dollar wires",
+   "priority_tier": "P2",
+   "subject": {
+    "evidence_id": "KYC-00040073",
+    "cif": "00040073",
+    "name": "Julia E Martin",
+    "date_of_birth": "1963-11-07",
+    "zip_code": "11201",
+    "segment": "retail",
+    "risk_rating": "Low",
+    "accounts": [
+     "account ending 0338"
+    ]
+   },
+   "summary": {
+    "evidence_id": "CASE-0871",
+    "alert_count": 3,
+    "first_alert_date": "2026-04-11",
+    "last_alert_date": "2026-10-29",
+    "total_amount": 14664.21,
+    "total_amount_note": "sum of the alert amounts; mixes transaction amounts, rule totals and fraud exposure estimates",
+    "systems": [
+     "Actimize transaction monitoring",
+     "Legacy SQL rules engine"
+    ],
+    "alerts_by_typology": {
+     "dormant_reactivation": 1,
+     "round_dollar_wires": 2
+    },
+    "amount_by_typology": {
+     "dormant_reactivation": 5693.21,
+     "round_dollar_wires": 8971.0
+    },
+    "branches": [
+     "MIA01"
+    ]
+   },
+   "alerts": [
+    {
+     "evidence_id": "LEG-00459",
+     "system": "Legacy SQL rules engine",
+     "scenario": "round_dollar_wires",
+     "scenario_label": "Round dollar wires",
+     "date": "2026-04-11",
+     "amount": 3590.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Round dollar wires"
+    },
+    {
+     "evidence_id": "ACT-260579",
+     "system": "Actimize transaction monitoring",
+     "scenario": "dormant_reactivation",
+     "scenario_label": "Dormant account reactivation",
+     "date": "2026-07-04",
+     "amount": 5693.21,
+     "amount_meaning": "amount of the transaction that triggered the alert",
+     "branch": "MIA01"
+    },
+    {
+     "evidence_id": "LEG-00131",
+     "system": "Legacy SQL rules engine",
+     "scenario": "round_dollar_wires",
+     "scenario_label": "Round dollar wires",
+     "date": "2026-10-29",
+     "amount": 5381.0,
+     "amount_meaning": "amount the rule flagged over its lookback window",
+     "rule_name": "Round dollar wires"
+    }
+   ]
+  }
+ ]
+}

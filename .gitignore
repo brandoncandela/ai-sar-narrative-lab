@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+
+# The API key lives only in your local environment. Never commit it.
+.env
+.env.*
+!.env.example
+*.pem

@@ -1,0 +1,26 @@
+{
+ "_note": "Hand-written test fixture for the evaluator tests. Not a model output.",
+ "who": [
+  {"text": "The subject is Sofia A Young, born June 3, 1988, a retail customer with a residential ZIP code of 33101 and a high customer risk rating.", "citations": ["KYC-00576315"]},
+  {"text": "She holds one account with the bank, the account ending 1567.", "citations": ["KYC-00576315"]}
+ ],
+ "what": [
+  {"text": "The bank's transaction monitoring system flagged a $546.01 transaction for rapid movement of funds and a $682.95 transaction for high velocity peer to peer payments.", "citations": ["ACT-263121", "ACT-262710"]},
+  {"text": "A legacy rules engine flagged $6,452.00 in wires to a high risk jurisdiction and $1,941.00 in funnel account deposits.", "citations": ["LEG-01581", "LEG-00739"]},
+  {"text": "The bank's fraud team referred the account for possible elder exploitation with an estimated exposure of $1,974.", "citations": ["FR-4523"]}
+ ],
+ "when": [
+  {"text": "The five alerts were raised between April 5, 2026 and October 15, 2026.", "citations": ["CASE-0033"]},
+  {"text": "The wires were flagged on April 13, 2026 and the fraud referral was opened on June 4, 2026.", "citations": ["LEG-01581", "FR-4523"]}
+ ],
+ "where": [
+  {"text": "Both transaction monitoring alerts were tied to branch MIA02.", "citations": ["ACT-263121", "ACT-262710"]},
+  {"text": "The legacy rules alerts do not record a branch.", "citations": ["LEG-01581", "LEG-00739"]}
+ ],
+ "why": [
+  {"text": "Three separate sources flagged the same customer within about six months, and the alerts together totaled $11,595.96.", "citations": ["CASE-0033"]},
+  {"text": "Wires to a high risk jurisdiction followed by funnel account deposits may indicate the account is being used to collect and move funds for others, which is unusual for a retail customer.", "citations": ["LEG-01581", "LEG-00739", "KYC-00576315"]},
+  {"text": "The fraud referral for possible elder exploitation raises the concern that some of these funds came from a vulnerable person.", "citations": ["FR-4523"]}
+ ],
+ "open_questions": ["Destination country and beneficiary of the wires", "Who the funnel deposits came from"]
+}
