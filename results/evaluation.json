@@ -1,0 +1,90 @@
+{
+ "summary": {
+  "drafts": 0,
+  "pass": 0,
+  "warn": 0,
+  "fail": 0,
+  "sentences": 0,
+  "values_checked": 0,
+  "by_check": {
+   "sections_present": {
+    "label": "All five sections present",
+    "severity": "fail",
+    "drafts_passing": 0,
+    "drafts": 0,
+    "issues": 0
+   },
+   "sentence_cited": {
+    "label": "Every sentence cites evidence",
+    "severity": "fail",
+    "drafts_passing": 0,
+    "drafts": 0,
+    "issues": 0
+   },
+   "citations_exist": {
+    "label": "Every citation exists in the packet",
+    "severity": "fail",
+    "drafts_passing": 0,
+    "drafts": 0,
+    "issues": 0
+   },
+   "amounts_supported": {
+    "label": "Amounts match cited evidence",
+    "severity": "fail",
+    "drafts_passing": 0,
+    "drafts": 0,
+    "issues": 0
+   },
+   "dates_supported": {
+    "label": "Dates match cited evidence",
+    "severity": "fail",
+    "drafts_passing": 0,
+    "drafts": 0,
+    "issues": 0
+   },
+   "counts_supported": {
+    "label": "Alert counts match cited evidence",
+    "severity": "fail",
+    "drafts_passing": 0,
+    "drafts": 0,
+    "issues": 0
+   },
+   "identifiers_supported": {
+    "label": "Branches, ZIPs and accounts match",
+    "severity": "fail",
+    "drafts_passing": 0,
+    "drafts": 0,
+    "issues": 0
+   },
+   "conclusory_language": {
+    "label": "No legal conclusions",
+    "severity": "warn",
+    "drafts_passing": 0,
+    "drafts": 0,
+    "issues": 0
+   },
+   "ids_in_text": {
+    "label": "No evidence IDs in the prose",
+    "severity": "warn",
+    "drafts_passing": 0,
+    "drafts": 0,
+    "issues": 0
+   },
+   "internal_terms": {
+    "label": "No internal scores or vendor names",
+    "severity": "warn",
+    "drafts_passing": 0,
+    "drafts": 0,
+    "issues": 0
+   },
+   "alert_coverage": {
+    "label": "Every alert is cited",
+    "severity": "warn",
+    "drafts_passing": 0,
+    "drafts": 0,
+    "issues": 0
+   }
+  }
+ },
+ "results": []
+}

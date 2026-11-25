@@ -1,0 +1,18 @@
+{
+ "reviewed": 0,
+ "stale": 0,
+ "decisions": {
+  "accept": 0,
+  "edit": 0,
+  "reject": 0
+ },
+ "outcomes": {
+  "agree": 0,
+  "evaluator_missed": 0,
+  "evaluator_overruled": 0,
+  "edited_passing_draft": 0,
+  "edited_failing_draft": 0
+ },
+ "reasons": {},
+ "rows": []
+}

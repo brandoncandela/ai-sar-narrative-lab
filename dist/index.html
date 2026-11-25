@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>AI SAR Narrative Lab | Brandon Candela</title>
+  <meta name="description" content="Claude drafts SAR narratives where every sentence cites its evidence. A rule-based evaluator checks every amount, date and citation, and a human reviewer accepts, edits or rejects each draft.">
+  <meta property="og:title" content="AI SAR Narrative Lab">
+  <meta property="og:description" content="AI-drafted SAR narratives with sentence-level citations, an evaluation harness and a human review log.">
+  <meta property="og:image" content="https://brandoncandela.github.io/ai-sar-narrative-lab/social-preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Crect x='8' y='8' width='12' height='2.6' rx='1.3' fill='white'/%3E%3Crect x='8' y='14' width='16' height='2.6' rx='1.3' fill='white'/%3E%3Crect x='8' y='20' width='9' height='2.6' rx='1.3' fill='white'/%3E%3Ccircle cx='22' cy='22' r='4' fill='%23a5b4fc'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="apple.css"><link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the drafts</a>
+  <header class="app-header ap-bar">
+    <a class="brand" href="./" aria-label="AI SAR Narrative Lab home"><span class="brand-mark">SN</span><span>SAR Narrative Lab</span></a>
+    <nav aria-label="Primary">
+      <a href="#workspace">Drafts</a><a href="#evaluation">Evaluation</a><a href="#reviews">Review log</a><a href="#how">How it works</a>
+      <a class="portfolio-link" href="https://brandoncandela.github.io/">Portfolio <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero ap-hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="kicker">AI-assisted investigations</p>
+        <h1 id="page-title" class="ap-gradient">A SAR narrative where every sentence shows its evidence.</h1>
+        <p class="lede">Claude drafts the narrative from the case file. A rule-based evaluator checks every amount, date and citation against that file. An investigator then accepts, edits or rejects the draft, and every disagreement with the evaluator is logged.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#workspace">Open a draft</a>
+          <a class="text-link" href="https://brandoncandela.github.io/case-studies/ai-sar-narrative-lab.html">Read the technical case study <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="safety-note"><span class="dot" aria-hidden="true"></span>This page never calls a model. Drafts were generated offline and committed, so nothing here can spend API credits.</p>
+      </div>
+      <div class="hero-side">
+        <img class="ap-art" src="hero-art.svg" width="560" height="440" alt="Illustration: a SAR draft whose citation chips link to the alerts that support them, with a rule check badge">
+        <aside class="stat-card surface" aria-label="Lab summary">
+          <div class="stat-head"><span>Run summary</span><span class="status-dot" id="model-label">Loading</span></div>
+          <dl id="hero-stats"></dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="workflow" aria-label="Workflow">
+      <span><b>01</b> Evidence packet</span><span><b>02</b> Claude draft</span><span><b>03</b> Rule checks</span><span><b>04</b> Human review</span>
+    </section>
+
+    <section id="workspace" class="workspace" aria-labelledby="workspace-title">
+      <div class="section-intro">
+        <div><p class="section-label">Draft workspace</p><h2 id="workspace-title">Pick a case and check the draft line by line</h2></div>
+        <p>Select a citation to see the evidence behind it. Select an alert to see every sentence that relies on it. Sentences the evaluator flagged are marked in red.</p>
+      </div>
+      <div class="ws-grid">
+        <aside class="queue surface" aria-labelledby="queue-title">
+          <div class="surface-head"><h3 id="queue-title">Case queue</h3><span class="count" id="queue-count"></span></div>
+          <div class="filters" role="group" aria-label="Filter cases">
+            <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="chip" data-filter="pass" aria-pressed="false">Pass</button>
+            <button type="button" class="chip" data-filter="warn" aria-pressed="false">Warnings</button>
+            <button type="button" class="chip" data-filter="fail" aria-pressed="false">Fail</button>
+          </div>
+          <label class="sr-only" for="case-select">Case</label>
+          <select id="case-select" class="case-select"></select>
+          <ol class="queue-list" id="queue-list"></ol>
+        </aside>
+
+        <article class="narrative surface" aria-labelledby="narrative-title">
+          <div class="surface-head">
+            <div><p class="step" id="case-kicker"></p><h3 id="narrative-title">Narrative draft</h3></div>
+            <span class="verdict" id="case-verdict"></span>
+          </div>
+          <p class="draft-meta" id="draft-meta"></p>
+          <div id="narrative-body" aria-live="polite"></div>
+          <div class="open-questions" id="open-questions"></div>
+        </article>
+
+        <div class="side">
+          <section class="surface evidence" aria-labelledby="evidence-title">
+            <div class="surface-head"><h3 id="evidence-title">Evidence packet</h3><span class="count" id="evidence-count"></span></div>
+            <div id="evidence-body"></div>
+          </section>
+          <section class="surface checks" aria-labelledby="checks-title">
+            <div class="surface-head"><h3 id="checks-title">Evaluator checks</h3></div>
+            <ul class="check-list" id="check-list"></ul>
+          </section>
+          <section class="surface review-panel" id="review-panel" aria-labelledby="review-title">
+            <div class="surface-head"><h3 id="review-title">Your review</h3></div>
+            <div id="committed-review"></div>
+            <div class="decision-row" role="group" aria-label="Decision">
+              <button type="button" class="seg" data-decision="accept" aria-pressed="false">Accept</button>
+              <button type="button" class="seg" data-decision="edit" aria-pressed="false">Edit</button>
+              <button type="button" class="seg" data-decision="reject" aria-pressed="false">Reject</button>
+            </div>
+            <div class="review-fields" id="review-fields" hidden>
+              <label for="reason-code">Reason</label>
+              <select id="reason-code"></select>
+              <label for="reason-text">What is wrong or what you changed</label>
+              <textarea id="reason-text" rows="3" placeholder="For example: the why section repeats the alerts but never says why this is unusual for a retail customer."></textarea>
+            </div>
+            <label for="reviewer-name">Reviewer name</label>
+            <input id="reviewer-name" type="text" autocomplete="name" placeholder="Your name">
+            <div class="actions">
+              <button type="button" class="button button-primary" id="save-review">Save review</button>
+              <button type="button" class="button button-secondary" id="cancel-edit" hidden>Cancel edit</button>
+            </div>
+            <p class="status" id="review-status" role="status"></p>
+            <p class="footnote">Reviews are saved only in this browser. Download the log to commit it to the repo, where the same evaluator scores any edits.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section id="evaluation" class="evaluation" aria-labelledby="evaluation-title">
+      <div class="section-intro">
+        <div><p class="section-label">Evaluation harness</p><h2 id="evaluation-title">What the rules found across every draft</h2></div>
+        <p>Each check is plain code, so the same draft always gets the same result. Hard checks fail a draft. Warnings send it to a person with a reason.</p>
+      </div>
+      <div class="kpis surface" id="eval-kpis" aria-live="polite"></div>
+      <div class="eval-grid">
+        <article class="surface">
+          <div class="surface-head"><div><p class="step">Per check</p><h3>Drafts that came through clean</h3></div></div>
+          <div class="table-wrap"><table><thead><tr><th>Check</th><th>Type</th><th>Clean drafts</th><th>Issues</th></tr></thead><tbody id="check-table"></tbody></table></div>
+        </article>
+        <article class="surface">
+          <div class="surface-head"><div><p class="step">Testing the tester</p><h3>Errors planted on purpose</h3></div><span class="count" id="fault-count"></span></div>
+          <p class="muted">Each real draft is copied and broken in one known way, then scored again. A fault counts as caught only if the check built for it fires.</p>
+          <div class="table-wrap"><table><thead><tr><th>Planted error</th><th>Planted</th><th>Caught</th></tr></thead><tbody id="fault-table"></tbody></table></div>
+        </article>
+      </div>
+      <p class="footnote limits">What rules cannot judge: whether the why section is persuasive, whether the right facts were chosen, and tone. That is what the human review step is for.</p>
+    </section>
+
+    <section id="reviews" class="reviews" aria-labelledby="reviews-title">
+      <div class="section-intro">
+        <div><p class="section-label">Human review</p><h2 id="reviews-title">Where the reviewer and the evaluator disagree</h2></div>
+        <p>A disagreement is the most useful signal in the lab. A draft the rules passed but a reviewer rejected shows what the rules cannot see. A draft the rules failed but a reviewer accepted shows a rule that is too strict.</p>
+      </div>
+      <div class="review-grid">
+        <article class="surface">
+          <div class="surface-head"><div><p class="step">Committed log</p><h3>Reviewed drafts</h3></div><span class="count" id="review-count"></span></div>
+          <div id="review-outcomes"></div>
+          <div class="table-wrap"><table><thead><tr><th>Case</th><th>Decision</th><th>Reason</th><th>Evaluator</th><th>Outcome</th></tr></thead><tbody id="review-table"></tbody></table></div>
+        </article>
+        <article class="surface local-log">
+          <div class="surface-head"><div><p class="step">This browser</p><h3>Your reviews</h3></div><span class="count" id="local-count"></span></div>
+          <p class="muted" id="local-summary"></p>
+          <div class="actions">
+            <button type="button" class="button button-primary" id="download-log">Download review log</button>
+            <button type="button" class="button button-secondary" id="clear-log">Clear</button>
+          </div>
+          <p class="footnote">Import a downloaded log with <code>python3 src/review.py import file.json</code>, then rebuild.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="how" class="how" aria-labelledby="how-title">
+      <div class="section-intro">
+        <div><p class="section-label">How it works</p><h2 id="how-title">Built so the key never leaves the laptop</h2></div>
+        <p>Generation runs once, locally, with the API key in an environment variable. Only the drafts and their scores are committed. This page is static files.</p>
+      </div>
+      <ol class="flow surface">
+        <li><b>Evidence packet</b><span>24 fictional cases from the AML Backlog Command Center. Every fact gets an ID: KYC, CASE, or the alert ID.</span></li>
+        <li><b>Draft with Claude</b><span id="flow-model">Structured output forces who, what, when, where and why, with a citations list on every sentence.</span></li>
+        <li><b>Check with rules</b><span>Amounts, dates, alert counts, branches, ZIPs and accounts must appear in the evidence the sentence cites.</span></li>
+        <li><b>Plant errors</b><span>Eight kinds of mistake are injected into copies of each draft to prove the checks fire.</span></li>
+        <li><b>Review</b><span>Accept, edit or reject with a reason. Edits are scored again by the same rules.</span></li>
+        <li><b>Publish</b><span>Static page on GitHub Pages with a policy that blocks outside connections.</span></li>
+      </ol>
+      <details class="prompt surface">
+        <summary>Read the exact instructions Claude was given</summary>
+        <pre id="system-prompt"></pre>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>Independent work sample by <a href="https://brandoncandela.github.io/">Brandon Candela</a> · <a href="https://github.com/brandoncandela/ai-sar-narrative-lab">Source on GitHub</a></p>
+    <p id="footer-note">Fictional bank, customers and alerts. Not a real SAR and not legal advice.</p>
+  </footer>
+  <script type="module" src="app.js"></script>
+  <script src="apple.js" data-reveal=".section-intro, .kpis, .eval-grid > *, .review-grid > *, .flow, .prompt" data-lift=".stat-card, .kpis"></script>
+</body>
+</html>

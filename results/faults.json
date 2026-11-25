@@ -1,0 +1,56 @@
+{
+ "seed": 7,
+ "planted": 0,
+ "caught": 0,
+ "by_fault": {
+  "invented_amount": {
+   "label": "Change a dollar amount to one that is not in the evidence",
+   "check": "amounts_supported",
+   "planted": 0,
+   "caught": 0
+  },
+  "fake_citation": {
+   "label": "Cite an alert ID that does not exist",
+   "check": "citations_exist",
+   "planted": 0,
+   "caught": 0
+  },
+  "dropped_citations": {
+   "label": "Remove every citation from a sentence",
+   "check": "sentence_cited",
+   "planted": 0,
+   "caught": 0
+  },
+  "missing_section": {
+   "label": "Empty one of the five required sections",
+   "check": "sections_present",
+   "planted": 0,
+   "caught": 0
+  },
+  "shifted_date": {
+   "label": "Move a date by nine days",
+   "check": "dates_supported",
+   "planted": 0,
+   "caught": 0
+  },
+  "wrong_citation": {
+   "label": "Swap a sentence's alert for a different alert in the same case",
+   "check": "amounts_supported",
+   "planted": 0,
+   "caught": 0
+  },
+  "inflated_count": {
+   "label": "Raise an alert count by two",
+   "check": "counts_supported",
+   "planted": 0,
+   "caught": 0
+  },
+  "conclusory_claim": {
+   "label": "Add a sentence saying the customer laundered the funds",
+   "check": "conclusory_language",
+   "planted": 0,
+   "caught": 0
+  }
+ },
+ "missed": []
+}
