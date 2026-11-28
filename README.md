@@ -1,5 +1,7 @@
 # AI SAR Narrative Lab
 
+[![CI](https://github.com/brandoncandela/ai-sar-narrative-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/brandoncandela/ai-sar-narrative-lab/actions/workflows/ci.yml)
+
 **Live demo: [brandoncandela.github.io/ai-sar-narrative-lab](https://brandoncandela.github.io/ai-sar-narrative-lab/)** · [Technical case study](https://brandoncandela.github.io/case-studies/ai-sar-narrative-lab.html) · [Portfolio](https://brandoncandela.github.io/)
 
 Writing the narrative is the slowest part of a Suspicious Activity Report. A language model can write a first draft in seconds, but an investigator cannot file a sentence they cannot check. This project has Claude draft SAR narratives where every sentence lists the evidence behind it, then checks every draft with plain rules before a person reviews it.
